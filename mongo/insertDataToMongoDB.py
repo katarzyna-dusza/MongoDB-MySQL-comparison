@@ -10,15 +10,15 @@ client = MongoClient("mongodb://localhost:27017/")
 # To achieve reliable test results I encourage you to run tests for different database's size, like 10, 100, 1000 etc.
 documentsNumber = int(sys.argv[1])
 
-# We create suitable databases for running various tests.
+# We create suitable databases for running various tests
 db = client["database-{}".format(documentsNumber)]
 collection = db["posts"]
 
-# Start time of all insertions.
+# Start time of all insertions
 start = datetime.datetime.now()
 
 for i in range(0, documentsNumber):
-    # Start time of a single insertion.
+    # Start time of a single insertion
     now = datetime.datetime.now()
 
     post = {
@@ -41,7 +41,7 @@ for i in range(0, documentsNumber):
     }
     collection.insert_one(post)
 
-    # Duration of a single insertion.
+    # Duration of a single insertion
     print(str(datetime.datetime.now() - now))
 
 # End time for inserting all of the documents
