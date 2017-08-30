@@ -64,5 +64,5 @@ You can change the number of inserted documents. The schema of a document is a b
     ./fetchingDataFromMongoDB.py 10 skip 5 3
     
     # Fetching data with nonunique category from 100-element's database
-        ./fetchingDataFromMongoDB.py 100 nonUniqueCategory
+    ./fetchingDataFromMongoDB.py 100 nonUniqueCategory
     ``` 
