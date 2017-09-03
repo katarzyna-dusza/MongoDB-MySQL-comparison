@@ -8,7 +8,7 @@ from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
 
-# Definitions.
+# Definitions
 uniqueNumber = 0
 skip = 0
 limit = 0
@@ -29,7 +29,7 @@ if option == 'skip':
     limit = int(sys.argv[4])
 
 # Connecting with proper databases for the tests
-db = client["database-{}".format(documentsNumber)]
+db = client["database{}".format(documentsNumber)]
 collection = db['posts']
 
 # Queries

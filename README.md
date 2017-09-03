@@ -87,7 +87,7 @@ You can change the number of inserted documents. The schema of a document is a b
     Running tests examples:
     
     ```shell
-    # Fetching data from 10-element's database and skip 5 elements limit to 3 documents
+    # Fetching data from 10-element's database and SKIP 5 elements LIMIT to 3 documents
     ./fetchingDataFromMongoDB.py 10 skip 5 3
     
     # Fetching data with nonunique category from 100-element's database
@@ -100,10 +100,35 @@ You can change the number of inserted documents. The schema of a document is a b
     python3 -m pip install PyMySQL
     ```
 
-1. Run _inserting data_ performance test passing the number of documents to be inserted as an argument.
+1. Run _inserting data_ performance test passing the number of rows to be inserted as an argument.
     ```shell
     ./insertDataToMySQL.py <documents_number>
     ``` 
     
 > INFO:
 In _insertDataToMySQL.py_ script we also measure duration with creating database, because as you probably now, in MongoDB there is no possibility to create database or collection without insert operation - that's why our MySQL tests (without creating databases) could be a little bit distorted. 
+
+3. Run _fetching data_ performance test passing the required number of rows (to connect with proper database) and an option, which represents a query. Skip, limit and uniqueNumber arguments are optional.
+ 
+   Possible options (queries):
+    - uniqueCategory (required option: unique number)
+    - nonUniqueCategory
+    - uniqueCategoryAndUniqueTag (required option: unique number)
+    - nonUniqueCategoriesAndTags
+    - favouritePosts
+    - skip (required options: skip and limit numbers) - it behaves differently from MongoDB option!
+    
+    Command for running tests:
+    ```shell
+    ./fetchingDataFromMySQL.py <rows_number> <query_option> <other_arguments>
+    ``` 
+ 
+    Running tests examples:
+    
+    ```shell
+    # Fetching data from 10-element's database and SKIP 3 elements LIMIT to 5 rows
+    ./fetchingDataFromMySQL.py 10 skip 5 3
+    
+    # Fetching data with nonunique category from 100-element's database
+    ./fetchingDataFromMySQL.py 100 nonUniqueCategory
+    ```
