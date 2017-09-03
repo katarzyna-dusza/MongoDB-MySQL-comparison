@@ -11,7 +11,7 @@ client = MongoClient("mongodb://localhost:27017/")
 documentsNumber = int(sys.argv[1])
 
 # We create suitable databases for running various tests
-db = client["database-{}".format(documentsNumber)]
+db = client["database{}".format(documentsNumber)]
 collection = db["posts"]
 
 # Start time of all insertions
