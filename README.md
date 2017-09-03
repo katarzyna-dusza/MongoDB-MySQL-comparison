@@ -54,8 +54,8 @@ If so, then kill it: `kill PID_ID`. Remember, if you won't kill them, then all p
     ```
 
 > NOTICE:
-I assume you have already noticed difference between MongoDB and MySQL insertions. In MongoDB, we have more information than in MySQL (like category for example). That's because I used second normal form for creating MySQL database. Thus, all information about categories and tags are in other tables - we don't need them to make performance tests.
-    
+I assume you have already noticed difference between MongoDB and MySQL insertions. In MongoDB, we have more information than in MySQL (like category for example), because I used the second normal form. Thus, all information about categories and tags are in other tables - we don't need them to make performance tests. But if you want to create other tables, then run simply `./createTables.py <documents_number>` in `mysql` directory.
+
 
 ## Test MongoDB performance
 1. Install `pymongo` library by running
