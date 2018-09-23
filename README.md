@@ -1,8 +1,7 @@
 # MongoDB and MySQL performance comparison
 
 ## Overview
-This repo is a part of my master's thesis, of which the main topic was comparing a performance between databases (MongoDB, MySQL) and web services (written in Node.JS 7, PHP 7).
-It's still in progress. 
+This repo is a part of my master's thesis, of which the main topic was comparing a performance between databases (MongoDB, MySQL) and web services (written in Node.JS 7, PHP 7). 
 
 ## Requirements
 - **Docker** for building one, equivalent environment in both images. They are based on the same image: [phusion/baseimage:0.9.9](https://github.com/phusion/baseimage-docker), which is very light.
